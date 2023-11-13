@@ -1,6 +1,8 @@
 ' A "Hello, World!" program in Visual Basic.
 Module Hello
   Sub Main()
-      MsgBox("Hello, World!") ' Display message on computer screen.
+      Dim password  
+      password = "Checkmarx!123"
+      MsgBox("Hello, World! " & password) ' Display message on computer screen.
   End Sub
 End Module

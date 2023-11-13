@@ -7,6 +7,6 @@ class MyConfig {
 }
 
 int main() {
-    std::cout << "Hello World!";
+    std::cout << "Hello World! " << MyConfig::dbPassword ;
     return 0;
 }

@@ -12,7 +12,7 @@ include ("./Footer.php");
 session_start();
 
 $sFileName = "AdminMenu.php";
-
+$password = "Checkmarx!123";
 
 
 check_security(2);

@@ -21,6 +21,10 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtProductName"
                     CssClass="failureNotification" ErrorMessage="Product name is required." ToolTip="Product name is required."
                     >*</asp:RequiredFieldValidator>
+                    <%
+                    postit = request.querystring("thispost")
+                    response.write(postit)
+                    %>
             </p>
             <p>
                 <asp:Label ID="lblCategoryId" runat="server" AssociatedControlID="ddlCategoryId">Category:</asp:Label><br />

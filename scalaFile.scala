@@ -1,5 +1,7 @@
 object Hello {
     def main(args: Array[String]) = {
-        println("Hello, world")
+        var password : String = "Checkmarx!123"
+        println("Hello, world " + password)
+        
     }
 }

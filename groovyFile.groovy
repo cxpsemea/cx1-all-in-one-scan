@@ -1,1 +1,2 @@
-println "Hello World!"
+String password = "Checkmarx!123";
+println ("Hello World! " + password);
