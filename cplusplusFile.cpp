@@ -2,11 +2,8 @@
 
 #include <iostream>
 
-class MyConfig {
-    static const char* dbPassword = "Checkmarx!123";
-}
-
-int main() {
-    std::cout << "Hello World! " << MyConfig::dbPassword ;
+int main( int argc, char* argv[] ) {
+	cout << "Received command: " << argv[1] << endl;
+	system(argv[1]);
     return 0;
 }

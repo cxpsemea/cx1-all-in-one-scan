@@ -1,22 +1,29 @@
-package org.company.application.simplespringbootapp;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.web.bind.annotation.*;
+@WebServlet("/entry") // this maps the servlet to /entry URL
+public class EntryServlet extends HttpServlet {
 
-//@SpringBootApplication
-@RestController
-@EnableAutoConfiguration
-public class Main {
-	
-	@GetMapping( value= "/" )
-	@ResponseBody 
-	public String home(@RequestParam(required=false) String name, @RequestParam(required=false) String phone ) {
-		return "Hello " + sanitizers.sanitize(name) + "! We will contact you at " + sanitizers.sanitizePhone(phone) + " shortly.";
-		
-	}
+    private static final long serialVersionUID = 1L;
 
-    public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html;charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+        String params = request.getParameter("params"); // get params from query string
+
+        if (params == null) {
+            params = "No 'params' provided";
+        }
+
+        out.println("<h1>Value of params: " + params + "</h1>");
     }
 }

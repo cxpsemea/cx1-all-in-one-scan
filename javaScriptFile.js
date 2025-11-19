@@ -1,27 +1,4 @@
-import React, {Component} from 'react';
-
-
-export default class Visualization extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            x: null,
-        };
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if(!this.props.x) {
-            this.setState({
-                x: null,
-            });
-        } else if(this.props.x !== prevProps.x) {
-            this.setState({
-                x: this.props.x,
-            });
-        }
-    }
-
-    render() {
-        return (<div>X: {this.state.x}</div>)
-    }
-}
+var url = new URL(window.location.href);
+var val = url.searchParams.get("val");
+var json = `[{"val": "${val}"}]`;
+var obj = eval(json); // The payload json=","a":alert(1),"b":" will result in an alert prompt, demonstrating XSS
