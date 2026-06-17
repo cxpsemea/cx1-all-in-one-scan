@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM golang:alpine
+FROM golang:alpine@sha256:3cf8e24ac6f59ef6e4359da18951c2c30a1ac4a67e2a5b91659153ccf77c8ed8
 # this is not a golang app actually so all of this will fail. It's just to generate KICS/IAC results
 RUN mkdir -p /opt/ssba
 WORKDIR /opt/ssba
