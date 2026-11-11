@@ -11,18 +11,21 @@ on:
 # (e.g., leaving GitHub's default broad read/write GITHUB_TOKEN enabled).
 # Omitting 'permissions:' altogether triggers this check.
 
+permissions:
+  contents: read
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: cx-public-ubuntu-x64
     steps:
       # Finding 2: Pinned-Dependencies
       # Triggered by referencing a mutable version tag (@v3) instead of a 40-character commit SHA.
       # Scorecard requires: uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.0.2
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3.9.1
         with:
           node-version: '18'
 
