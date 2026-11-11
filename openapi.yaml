@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: Insecure Sample Service API
+  version: 1.0.0
+paths:
+  /api/v1/users/export:
+    get:
+      summary: Dump all user accounts
+      description: Missing authentication and unconstrained response
+      # Finding: Missing Global & Operation Security Definition (No auth scheme)
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object # Finding: Missing schema constraints/properties
+  /api/v1/admin/execute:
+    post:
+      summary: Remote admin endpoint
+      # Finding: Sensitive operation over HTTP without security requirements
+      responses:
+        default:
+          description: Unexpected response
